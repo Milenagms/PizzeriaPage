@@ -12,13 +12,14 @@
 <body>
   <header>
     <a href="#" class="logo">Gomes <span>Pizzaria</span></a>
+    <div class="menuToggle" onclick="toggleMenu();"></div>
     <ul class="navigation">
-      <li><a href="#banner">Home</a></li>
-      <li><a href="#about">Sobre</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#expert">Expert</a></li>
-      <li><a href="#testimonials">Depoimentos</a></li>
-      <li><a href="#contact">Contato</a></li>
+      <li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+      <li><a href="#about" onclick="toggleMenu();" >Sobre</a></li>
+      <li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
+      <li><a href="#expert"onclick="toggleMenu();">Expert</a></li>
+      <li><a href="#testimonials"onclick="toggleMenu();">Depoimentos</a></li>
+      <li><a href="#contact" onclick="toggleMenu();">Contato</a></li>
     
     </ul>
   </header>
@@ -26,6 +27,7 @@
     <div class="content">
       <h2> Sempre boas escolhas</h2>
       <p> Horário de funcionamento: terça a domingo de 18:30 as 23:50  </p>
+      <p> Bairro: São bento, Cidade: joinville-SC</p>
       <a href="#" class="btn"> Nosso Menu</a>
     </div>
   </section>
@@ -187,8 +189,8 @@
       <h2 class="titleText">Faça seu <span>P</span>edido</h2>
       <p> Faça seu pedido para ser entregue em casa. Mas antes dê uma olhada no nosso menu e volte aqui novamente 😋</p>
     </div>
-    <div class="row">
-      <div class="col50 contactForm">
+    <div class="row501">
+      <div class="contact50 contactForm">
         <h3>Dados pessoais</h3>
         <div class="inputBox">
           <input type="text" placeholder="Name">
@@ -216,7 +218,8 @@
           <input type="text" placeholder="Troco para quanto se precisar:">
         </div>
       </div>
-      <div class="col50 contactForm">
+      <div class="row50 contact50 contactForm">
+      <div>
         <h3> Pizzas salgadas</h3>
         <label>
           <input type="radio" name ="pizza">Pizza Gourmet Alho
@@ -252,7 +255,7 @@
           <input type="radio" name =""> Pizza Gourmet Romana
         </label>
       </div>
-      <div class="col50 contactForm">
+      <div >
         <h3>Pizzas doces </h3>
         <label>
           <input type="radio" name ="pizza"> Pizza Morango com Chocolate
@@ -288,7 +291,9 @@
           <input type="radio" name =""> Pizza Gourmet Romeu e Julieta.
         </label>
       </div>
+      </div>
     </div>
+    
     <div class="buy">
       <a href="#" class="btn"> Finalizo minha compra</a>
     </div>
@@ -305,7 +310,16 @@
       const header = document.querySelector('header');
       header.classList.toggle("sticky", window.scrollY > 0);
     });
+
+    function toggleMenu(){
+      const menuToggle = document.querySelector('.menuToggle');
+      const navigation = document.querySelector('.navigation')
+      menuToggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+    }
   </script>
   
+
+}
 </body>
 </html>
